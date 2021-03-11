@@ -1,6 +1,6 @@
 export interface Brand{
-    brandId: number;
-    brandName : string;
-    brandLogo: string;
+    Id: number;
+    Name : string;
+    LogoPath: string;
     
 }
