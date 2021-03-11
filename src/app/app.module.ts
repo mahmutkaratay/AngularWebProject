@@ -10,6 +10,7 @@ import { ModelComponent } from './components/model/model.component';
 
 @NgModule({
   
+  
   declarations: [
     AppComponent,
     ProductComponent,
