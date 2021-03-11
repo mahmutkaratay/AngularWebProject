@@ -9,6 +9,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { ModelComponent } from './components/model/model.component';
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     ProductComponent,
