@@ -1,6 +1,6 @@
 export interface Model{
-    modelId: number;
-    brandId: number;
-    modelName : string;
+    Id: number;
+    BrandId: number;
+    Name : string;
     
 }

@@ -1,7 +1,28 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<ul *ngFor="let brand of brands">
-  <li class="list-group-item">{{ brand.Name }}</li>
+<ul class="list-group">
+  <li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)"
+  
+  >
+
+    <div class="row"> 
+      <div class="col-md-6">
+        <img src="{{ brand.LogoPath }}" height="30" />
+      </div>
+      <div class="col-md-6">
+        {{ brand.Name }}
+      </div>
+    </div>
+  
+   
+  
+  </li>
 </ul>
+
+<h5 *ngIf="currentBrand">{{currentBrand.Name}} seçtiniz.</h5>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
-import { BrandResponseModel } from 'src/app/models/brandResponseModel';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -12,6 +11,8 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   dataLoaded = false;
+  currentBrand :Brand;
+
 
   constructor(private brandService: BrandService) {}
 
@@ -20,12 +21,24 @@ export class BrandComponent implements OnInit {
   }
 
   getBrands() {
-    console.log('api request başladı');
-    this.brandService.getBrands().subscribe(response=> {
+    this.brandService.getBrands().subscribe((response) => {
       this.brands = response.Data;
-      console.log('api request bitti:' + response.Success  + response.Message +response.Data.length);
       this.dataLoaded = true;
     });
-    console.log('metod bitti');
+  }
+
+  setCurrentBrand(brand:Brand)
+  {
+    this.currentBrand = brand;
+  }
+
+  getCurrentBrandClass(brand:Brand)
+  {
+    if(brand== this.currentBrand)
+    {
+      return "list-group-item active";
+    }else {
+      return "list-group-item"
+    }
   }
 }
