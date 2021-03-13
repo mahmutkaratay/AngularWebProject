@@ -3,4 +3,6 @@ export interface Brand{
     Name : string;
     LogoPath: string;
     
+      Brand(x: null): null // overload
+
 }

@@ -1,31 +1,51 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Model } from 'src/app/models/model';
 import { ModelService } from 'src/app/services/model.service';
 
 @Component({
   selector: 'app-model',
   templateUrl: './model.component.html',
-  styleUrls: ['./model.component.css']
+  styleUrls: ['./model.component.css'],
 })
 export class ModelComponent implements OnInit {
-
   dataLoaded = false;
-  models : Model[] = [];
-  
-  constructor(private modelService:ModelService) { }
+  models: Model[] = [];
+
+  constructor(
+    private modelService: ModelService,
+    private activetedRoute: ActivatedRoute //mevcut linki verir.
+  ) {}
 
   ngOnInit(): void {
-    this.getModels();
+
+  
+    this.activetedRoute.params.subscribe(params => {
+      if(params["brandId"]){
+        this.getModelsByBrandId(params["brandId"]);
+      }else{
+        this.getModels();
+      }
+    })
+
+
   }
 
   getModels() {
-    console.log('api request başladı');
+
     this.modelService.getModels().subscribe((response) => {
       this.models = response.Data;
       this.dataLoaded = true;
     });
-    console.log('metod bitti');
+ 
   }
 
+  getModelsByBrandId(brandId:number) {
 
+    this.modelService.getModelsByBrandId(brandId).subscribe((response) => {
+      this.models = response.Data;
+      this.dataLoaded = true;
+    });
+ 
+  }
 }

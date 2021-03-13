@@ -7,11 +7,16 @@
 </div>
 
 <ul class="list-group">
-  <li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)"
-  
+  <li routerLink="/models" [class]="getAllBrandClass()"
+    (click)="clearCurrentBrand()"
+  >Tüm Modeller</li>
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="/models/brand/{{ brand.Id }}"
+    *ngFor="let brand of brands"
+    [class]="getCurrentBrandClass(brand)"
   >
-
-    <div class="row"> 
+    <div class="row">
       <div class="col-md-6">
         <img src="{{ brand.LogoPath }}" height="30" />
       </div>
@@ -19,10 +24,7 @@
         {{ brand.Name }}
       </div>
     </div>
-  
-   
-  
   </li>
 </ul>
 
-<h5 *ngIf="currentBrand">{{currentBrand.Name}} seçtiniz.</h5>
+<h5 *ngIf="currentBrand">{{ currentBrand.Name }} seçtiniz.</h5>
