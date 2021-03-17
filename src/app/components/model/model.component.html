@@ -21,7 +21,7 @@
 </div>
 
 <ul class="list-group">
-  <li *ngFor="let model of models" class="list-group-item">
+  <li *ngFor="let model of models | filterPipe:filterText" class="list-group-item">
     {{ model.Name | lowercase }} :
     {{ model.Id | vatAdded: 10 | currency }}
   </li>

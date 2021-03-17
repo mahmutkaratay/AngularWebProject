@@ -10,6 +10,7 @@ import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ModelComponent } from './components/model/model.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   
@@ -20,7 +21,8 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
     BrandComponent,
     NaviComponent,
     ModelComponent,
-    VatAddedPipe
+    VatAddedPipe,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,
