@@ -20,9 +20,23 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<ul class="list-group">
-  <li *ngFor="let model of models | filterPipe:filterText" class="list-group-item">
-    {{ model.Name | lowercase }} :
-    {{ model.Id | vatAdded: 10 | currency }}
-  </li>
-</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Operation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let model of models | filterPipe:filterText" >
+      <th scope="row">2</th>
+      <td> {{ model.Name | lowercase }} </td>
+      <td>  {{ model.Id | vatAdded: 10 | currency }}</td>
+      <td><button (click)="addToCart(model)" type="button" class="btn btn-success">Sepete Ekle</button></td>
+    </tr>
+   
+  </tbody>
+</table>
