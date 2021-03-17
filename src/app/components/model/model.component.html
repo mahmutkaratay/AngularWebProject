@@ -1,4 +1,17 @@
+<div class="mb-3">
+  <label for="filterText" class="form-label">Model Ara</label>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Arama ifadesi giriniz"
+  />
+</div>
 
+<div *ngIf="filterText" class="alert alert-success">
+  {{ filterText }} aradınız.
+</div>
 <div
   *ngIf="dataLoaded == false"
   class="spinner-border text-primary"
@@ -8,10 +21,8 @@
 </div>
 
 <ul class="list-group">
-    <li *ngFor="let model of models" class="list-group-item">
-      {{ model.Name }}
-    </li>
-    
-  </ul>
-
-  
+  <li *ngFor="let model of models" class="list-group-item">
+    {{ model.Name | lowercase }} :
+    {{ model.Id | vatAdded: 10 | currency }}
+  </li>
+</ul>

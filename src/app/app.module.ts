@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
+import {FormsModule} from "@angular/forms"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { ProductComponent } from './components/product/product.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ModelComponent } from './components/model/model.component';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
 
 @NgModule({
   
@@ -17,12 +19,14 @@ import { ModelComponent } from './components/model/model.component';
     ProductComponent,
     BrandComponent,
     NaviComponent,
-    ModelComponent
+    ModelComponent,
+    VatAddedPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

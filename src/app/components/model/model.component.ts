@@ -11,7 +11,7 @@ import { ModelService } from 'src/app/services/model.service';
 export class ModelComponent implements OnInit {
   dataLoaded = false;
   models: Model[] = [];
-
+  filterText  = "";
   constructor(
     private modelService: ModelService,
     private activetedRoute: ActivatedRoute //mevcut linki verir.
