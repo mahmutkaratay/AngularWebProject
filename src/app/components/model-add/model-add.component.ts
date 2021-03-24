@@ -44,8 +44,8 @@ export class ModelAddComponent implements OnInit {
         this.toastrService.success(response.Message,"Başarılı");
       }, responseError=>
       {
-        console.log(responseError.Message);
-        this.toastrService.error(responseError.Message);
+        console.log(responseError);
+        this.toastrService.error(responseError.error.Message);
         
       });
      

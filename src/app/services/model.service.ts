@@ -65,7 +65,7 @@ export class ModelService {
 
   add(model:Model):Observable<ResponseModel>
   {
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"/Models/Add",model);
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"Models/Add",model);
 
   }
   
