@@ -5,13 +5,40 @@
         <h5 class="title">Model Ekle</h5>
       </div>
       <div class="card-body">
-        <form [formGroup]="modelAddForm">
-          <div class="form-group">
-              <input type="text" id="Name" formControlName="Name" class="form-control" placeholder="Model adı"/>
 
+        <form [formGroup]="modelAddForm">
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="Name">Model Adı</label>
+              <input
+                type="text"
+                id="Name"
+                formControlName="Name"
+                class="form-control"
+                placeholder="Model adı"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="Brand">Marka</label>
+              <input
+                type="number"
+                id="Brand"
+                formControlName="BrandId"
+                class="form-control"
+                placeholder="Marka"
+              />
+            </div>
           </div>
         </form>
+      </div>
+
+      <div class="card-footer">
+          <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+
       </div>
     </div>
   </div>
 </div>
+ 
