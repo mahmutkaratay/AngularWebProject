@@ -13,7 +13,6 @@ export class ModelService {
 
   Models: Model[] = [];
   apiUrl = 'http://localhost:3551/api/';
-  //apiUrl = 'http://api.otovio.com/api/';
 
   token =
     'zghDivjXrRwQKtQqz0zbcmR42Aw0zc8JNp9T3Ggk6Id5jjAQLb18ztvQv4CJghAZUObc2LrcB6muiApFe_mY51HBSuHvshx1oj9GCdST1RKFPzK4dTcgNFEhH89j2JA14W6ojwYzWV3ST8N7xMOwOoVsE5tC6XlSgoQxZyNJNLuR1WxsO_JBGiQDcAWaXp4weIL_3ULqiry-1SolB-B5THV9t7YJ8EPUEgollcPp836guyhsp-ej4bLbGnjnIxNhFd-u_TiGp582VWGCwx8TxEooHirjLfkwGoLDFULPW7tuWSp7YGftBX4M_CWn7hmEonFpzsOalDKXlSzW0jLUcHKSb_ZIcEK6GqtHUha0qxc';

@@ -11,7 +11,7 @@ import { TokenModel } from '../models/tokenModel';
 })
 export class AuthService {
   apiUrl = 'http://localhost:3551/api/login';
-  //apiUrl = 'http://api.otovio.com/api/';
+
 
   constructor(private httpClient: HttpClient) { }
 
